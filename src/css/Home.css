@@ -1,0 +1,49 @@
+.header-title {
+  font-size: 4.5em;
+  line-height: 0.75em;
+}
+
+.header-subtitle {
+  font-size: 1.5em;
+  color: rgb(155, 155, 155);
+}
+
+.the-jar {
+  margin-top: 2em;
+}
+
+.the-jar:hover {
+  animation: shake 0.25s;
+  cursor: pointer;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-1deg); }
+  20% { transform: rotate(-2deg); }
+  40% { transform: rotate(-2deg); }
+  50% { transform: rotate(-1deg); }
+  60% { transform: rotate(0deg); }
+  70% { transform: rotate(1deg); }
+  80% { transform: rotate(2deg); }
+  90% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.selected-activity {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 300px;
+  border: 2px dashed gray;
+}
+
+.selected-activity > span {
+  font-size: 1.15em;
+  text-align: center;
+  overflow-wrap: break-word;
+  width: 100%;
+}

@@ -59,13 +59,9 @@ const Home = () => {
 
   return (
     <>
+      <Button variant="primary" onClick={handleLogout} className="logout-btn">Log out</Button>
       <span className="header-title">THE JAR</span>
-      <span className="header-subtitle">Welcome {user.displayName}</span>
-      <div className="d-grid gap-2">
-        <Button variant="primary" onClick={handleLogout}>
-          Log out
-        </Button>
-      </div>
+      <span className="header-subtitle">Our next date will be...</span>
       <div className="selected-activity">
         { loading && userList.length > 0 ? (
           <span>Picking from the Jar...</span>
@@ -75,7 +71,14 @@ const Home = () => {
           <span>{chosenItem}</span>
         )}
       </div>
-      <img src={MyImage} alt="the jar" className="the-jar" onClick={shakeTheJar} />
+      <div 
+        className={loading && userList.length > 0 ? "jar-container-shaking" : "jar-container"}>
+        <img src={MyImage} alt="the jar" className="the-jar" onClick={shakeTheJar} />
+        <span className="jar-amount">{
+          loading && userList.length == 0 ? "Counting" : userList.length > 0 ? userList.length : 0
+        }<br/><span>Items</span></span>
+      </div>
+
     </>
   );
 };

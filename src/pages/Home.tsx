@@ -30,7 +30,7 @@ const Home = () => {
   const fetchData = async () => {
     if(user.email){
       const q = query(collection(db, "userbucketlist"), 
-        where("userEmail", "==", user.email)
+        where("userEmails", "array-contains", user.email)
       );
 
       const querySnapshot = await getDocs(q);

@@ -65,7 +65,7 @@ const Home = () => {
       <div className="selected-activity">
         { loading && userList.length > 0 ? (
           <span>Picking from the Jar...</span>
-        ) : loading && userList.length == 0 ? (
+        ) : loading && userList.length === 0 ? (
           <span>Loading...</span>
         ) : (
           <span>{chosenItem}</span>
@@ -75,7 +75,7 @@ const Home = () => {
         className={loading && userList.length > 0 ? "jar-container-shaking" : "jar-container"}>
         <img src={MyImage} alt="the jar" className="the-jar" onClick={shakeTheJar} />
         <span className="jar-amount">{
-          loading && userList.length == 0 ? "Counting" : userList.length > 0 ? userList.length : 0
+          loading && userList.length === 0 ? "Counting" : userList.length > 0 ? userList.length : 0
         }<br/><span>Items</span></span>
       </div>
 
